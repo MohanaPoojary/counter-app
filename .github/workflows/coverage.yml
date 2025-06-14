@@ -10,6 +10,10 @@ jobs:
   test-and-upload-coverage:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: counter_app  
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,11 +27,11 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npm run test -- --coverage
+        run: npx vitest run --coverage
 
       - name: Deploy coverage report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: coverage
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: counter_app/coverage 
           destination_dir: coverage
