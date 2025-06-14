@@ -10,6 +10,7 @@ export default defineConfig({
     css: true,
         coverage: {
             reporter: ["text", "lcov", "html"], // include 'html' reporter
+            exclude: ['src/main.tsx']
   },
 }
 });
