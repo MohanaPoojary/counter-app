@@ -8,5 +8,12 @@ npx vitest run --coverage
 Test Coverage
 
 ```bashrc
-coverage/index.html
+xdg-open coverage/index.html
+
+```
+
+Deploy
+
+```bashrc
+npm run deploy
 ```
