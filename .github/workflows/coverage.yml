@@ -19,9 +19,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Intsall packages
-        run: cd counter_app \
-             npm i
+      - name: Intsall packages 
+        run: |
+          cd counter_app/
+          npm i
 
       - name: Run tests with coverage
         run: npx vitest run --coverage
