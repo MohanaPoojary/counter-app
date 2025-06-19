@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '35 5 * * 4' # Runs Thursday at 11:02 AM IST
+    - cron: '40 5 * * 4' IST
 
 jobs:
   test-and-upload-coverage:
