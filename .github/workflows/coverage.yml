@@ -5,6 +5,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    - cron: '35 5 * * 4' # Runs Thursday at 11:02 AM IST
 
 jobs:
   test-and-upload-coverage:
