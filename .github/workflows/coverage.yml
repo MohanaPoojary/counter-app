@@ -1,6 +1,13 @@
 name: Upload Coverage Report
 
 on:
+  workflow_dispatch:  # manual trigger support
+    inputs:
+      message:
+        description: 'Message to display'
+        required: false
+        default: 'Running tests and uploading coverage!'
+        
   push:
     branches: [main]
   pull_request:
@@ -13,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Show custom message
+        run: echo "${{ github.event.inputs.message }}"
+        
       - name: Checkout code
         uses: actions/checkout@v4
 
